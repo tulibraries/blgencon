@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   layout 'blacklight'
 
   protect_from_forgery with: :exception
+  before_action :authenticate_user!, only: [:uploads]
 end
