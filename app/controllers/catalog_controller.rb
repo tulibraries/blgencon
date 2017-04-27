@@ -15,6 +15,7 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
+      fl: "id, score, author_display, format, pub_date, title_display, title_vern_display, subject_topic_facet, subject_geo_facet, subject_era_facet, url_fulltext_display, url_suppl_display, short_description_display, long_description_display",
       rows: 10
     }
 
@@ -84,7 +85,8 @@ class CatalogController < ApplicationController
     #   :years_25 => { label: 'within 25 Years', fq: "pub_date:[#{Time.zone.now.year - 25 } TO *]" }
     #}
 
-    config.add_facet_field 'caming_group_company_facet', label: 'Caming Group Company'
+    config.add_facet_field 'year_facet', label: 'Year'
+    config.add_facet_field 'group_facet', label: 'Group'
     config.add_facet_field 'event_type_facet', label: 'Event Type'
     config.add_facet_field 'game_system_facet', label: 'Game System'
     config.add_facet_field 'rules_edition_facet', label: 'Rules Edition'
@@ -115,48 +117,21 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field 'id', label: 'ID'
     config.add_index_field 'title_display', label: 'Title'
-    config.add_index_field 'description_display', label: 'Description'
-    #config.add_index_field 'title_vern_display', label: 'Title'
-    #config.add_index_field 'author_display', label: 'Author'
-    #config.add_index_field 'author_vern_display', label: 'Author'
-    #config.add_index_field 'start_date_display', label: 'Start Date'
-    #config.add_index_field 'format', label: 'Format'
-    #config.add_index_field 'language_facet', label: 'Language'
-    #config.add_index_field 'published_display', label: 'Published'
-    #config.add_index_field 'published_vern_display', label: 'Published'
-    #config.add_index_field 'lc_callnum_display', label: 'Call number'
+    config.add_index_field 'short_description_display', label: 'Summary'
+    config.add_index_field 'long_description_display', label: 'Description'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field 'title_display', label: 'Title'
-    #config.add_show_field 'title_vern_display', label: 'Title'
-    #config.add_show_field 'subtitle_display', label: 'Subtitle'
-    #config.add_show_field 'subtitle_vern_display', label: 'Subtitle'
-    #config.add_show_field 'author_display', label: 'Author'
-    #config.add_show_field 'author_vern_display', label: 'Author'
-
-    #config.add_show_field 'channel_facet', label: 'Channel'
-    #config.add_show_field 'description_display', label: 'Description'
-    #config.add_show_field 'release_date_display', label: 'Release Date'
-
-    #config.add_show_field 'format', label: 'Format'
-    #config.add_show_field 'url_fulltext_display', label: 'URL', helper_method: 'make_link'
-    #config.add_show_field 'url_suppl_display', label: 'More Information'
-    #config.add_show_field 'language_facet', label: 'Language'
-    #config.add_show_field 'published_display', label: 'Published'
-    #config.add_show_field 'published_vern_display', label: 'Published'
-    #config.add_show_field 'lc_callnum_display', label: 'Call number'
-    #config.add_show_field 'isbn_t', label: 'ISBN'
-
     config.add_show_field 'guid_s', label: 'GUID'
-    #config.add_show_field 'keywords_display', label: 'Keyword'
-    #config.add_show_field 'subject_topic_facet', label: 'Subject'
-    #config.add_show_field 'thumbnail_display', label: 'Thumbnail'
-    #config.add_show_field 'copyright_display', label: 'Rights'
-
+    config.add_show_field 'year_display', label: 'Year'
+    config.add_show_field 'original_order_display', label: 'Original Order'
+    config.add_show_field 'also_runs_display', label: 'Also Runs'
+    config.add_show_field 'prize_display', label: 'Prize'
     config.add_show_field 'game_id_display', label: 'Game'
-    config.add_show_field 'caming_group_company_display', label: 'Caming Group Company'
-    config.add_show_field 'event_title_display', label: 'Event Title'
+    config.add_show_field 'group_display', label: 'Group'
+    config.add_show_field 'short_description_display', label: 'Short Description'
+    config.add_show_field 'long_description_display', label: 'Long Description'
     config.add_show_field 'event_type_display', label: 'Event Type'
     config.add_show_field 'game_system_display', label: 'Game System'
     config.add_show_field 'rules_edition_display', label: 'Rules Edition'
@@ -168,7 +143,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'start_date_display', label: 'Start Date'
     config.add_show_field 'duration_display', label: 'Duration'
     config.add_show_field 'end_date_display', label: 'End Date'
-    config.add_show_field 'gm_name_s_display', label: 'Gm Name S'
+    config.add_show_field 'gm_names_display', label: 'Game Master Names'
     config.add_show_field 'web_address_for_more_info_display', label: 'Web Address For More Info'
     config.add_show_field 'email_for_more_info_display', label: 'Email For More Info'
     config.add_show_field 'tournament_display', label: 'Tournament'
