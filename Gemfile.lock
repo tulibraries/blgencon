@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/tulibraries/blimp
-  revision: 0d34ec11d50483539f52f45741a78c121b11215c
+  revision: ce226a38aaeac78fe4d41f6b6ed54b47c6645830
   specs:
-    blimp (0.1.0)
+    blimp (0.1.1)
       carrierwave (~> 1.0)
       rails (~> 5.0.1)
       ruby-progressbar
@@ -103,8 +103,10 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    foreman (0.84.0)
+      thor (~> 0.19.1)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     i18n (0.8.1)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -132,7 +134,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nio4r (2.0.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     pry (0.10.4)
@@ -239,6 +241,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.5)
+  foreman
   harvest_csv!
   jbuilder (~> 2.5)
   jquery-rails
