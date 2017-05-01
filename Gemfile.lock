@@ -1,17 +1,17 @@
 GIT
   remote: https://github.com/tulibraries/blimp
-  revision: ce226a38aaeac78fe4d41f6b6ed54b47c6645830
+  revision: 222f67b0b55285ee5a42de1bd2c6ea8f7fb67671
   specs:
-    blimp (0.1.1)
+    blimp (0.2.0)
       carrierwave (~> 1.0)
       rails (~> 5.0.1)
       ruby-progressbar
 
 GIT
   remote: https://github.com/tulibraries/harvest_csv.git
-  revision: 164d5cebb8f3bb91adef21bb8cad2db99e980980
+  revision: 9aee1db3f26dfce65fe55a0a3c0721efa0a5b65f
   specs:
-    harvest_csv (0.0.3)
+    harvest_csv (0.0.4)
       activesupport (~> 5.0)
       rsolr (~> 1.0)
       ruby-progressbar (~> 1.8)
@@ -74,7 +74,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
-    carrierwave (1.0.0)
+    carrierwave (1.1.0)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -123,7 +123,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.4)
+    mail (2.6.5)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)

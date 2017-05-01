@@ -15,7 +15,22 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      fl: "id, score, author_display, format, pub_date, title_display, title_vern_display, subject_topic_facet, subject_geo_facet, subject_era_facet, url_fulltext_display, url_suppl_display, short_description_display, long_description_display",
+      qf: "short_description_t,
+           long_description_t",
+      fl: "id,
+           score,
+           author_display,
+           format,
+           pub_date,
+           title_display,
+           title_vern_display,
+           subject_topic_facet,
+           subject_geo_facet,
+           subject_era_facet,
+           url_fulltext_display,
+           url_suppl_display,
+           short_description_display,
+           long_description_display",
       rows: 10
     }
 
