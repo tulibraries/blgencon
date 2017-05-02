@@ -21,6 +21,7 @@ group:
 title:
 - title_display
 - title_facet
+- title_t
 short_description:
 - short_description_display
 - short_description_t

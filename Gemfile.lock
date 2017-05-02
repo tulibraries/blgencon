@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/blimp
-  revision: 222f67b0b55285ee5a42de1bd2c6ea8f7fb67671
+  revision: 5eccdc18fcc84a1a559a5bd45349d06171d07526
   specs:
     blimp (0.2.0)
       carrierwave (~> 1.0)
