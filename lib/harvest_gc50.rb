@@ -1,7 +1,6 @@
 module HarvestCSV
   def self.csv_to_solr(csv_hash, schema_map)
     document = Hash.new
-    document["id"] = SecureRandom.uuid
     csv_hash.each { |key, value|
       k = key.parameterize.underscore
       if (schema_map.has_key?(k))
@@ -11,7 +10,8 @@ module HarvestCSV
         }
       end
     }
-    document['id'].prepend("#{document['year_display']}-")
+    document["id"] = document['original_order_display'] if document["id"].nil?
+    document["id"].prepend("#{document['year_display']}-")
     document
   end
 end
