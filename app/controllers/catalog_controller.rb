@@ -15,20 +15,13 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      qf: "short_description_t,
+      qf: "title_t,
+           short_description_t,
            long_description_t",
       fl: "id,
            score,
-           author_display,
-           format,
-           pub_date,
+           year_display,
            title_display,
-           title_vern_display,
-           subject_topic_facet,
-           subject_geo_facet,
-           subject_era_facet,
-           url_fulltext_display,
-           url_suppl_display,
            short_description_display,
            long_description_display",
       rows: 10
@@ -83,23 +76,6 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    #.add_facet_field 'channel_facet', label: 'Channel'
-    #.add_facet_field 'format', label: 'Format'
-    #.add_facet_field 'pub_date', label: 'Publication Year', single: true
-    #.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    #.add_facet_field 'language_facet', label: 'Language', limit: true
-    #.add_facet_field 'lc_1letter_facet', label: 'Call Number'
-    #.add_facet_field 'subject_geo_facet', label: 'Region'
-    #.add_facet_field 'subject_era_facet', label: 'Era'
-
-    #config.add_facet_field 'example_pivot_field', label: 'Pivot Field', :pivot => ['format', 'language_facet']
-
-    #config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-    #   :years_5 => { label: 'within 5 Years', fq: "pub_date:[#{Time.zone.now.year - 5 } TO *]" },
-    #   :years_10 => { label: 'within 10 Years', fq: "pub_date:[#{Time.zone.now.year - 10 } TO *]" },
-    #   :years_25 => { label: 'within 25 Years', fq: "pub_date:[#{Time.zone.now.year - 25 } TO *]" }
-    #}
-
     config.add_facet_field 'year_facet', label: 'Year'
     config.add_facet_field 'group_facet', label: 'Group'
     config.add_facet_field 'event_type_facet', label: 'Event Type'
@@ -131,6 +107,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'id', label: 'ID'
+    config.add_index_field 'year_display', label: 'Year'
     config.add_index_field 'title_display', label: 'Title'
     config.add_index_field 'short_description_display', label: 'Summary'
     config.add_index_field 'long_description_display', label: 'Description'
@@ -212,33 +189,12 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
-      field.solr_local_parameters = {
-        qf: '$author_qf',
-        pf: '$author_pf'
-      }
-    end
-
-    # Specifying a :qt only to show it's possible, and so our internal automated
-    # tests can test it. In this case it's the same as
-    # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
-      field.qt = 'search'
-      field.solr_local_parameters = {
-        qf: '$subject_qf',
-        pf: '$subject_pf'
-      }
-    end
-
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', label: 'relevance'
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', label: 'year'
-    config.add_sort_field 'author_sort asc, title_sort asc', label: 'author'
+    config.add_sort_field 'score desc, year_sort desc, title_sort asc', label: 'relevance'
+    config.add_sort_field 'year_sort desc, title_sort asc', label: 'year'
     config.add_sort_field 'title_sort asc, pub_date_sort desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
