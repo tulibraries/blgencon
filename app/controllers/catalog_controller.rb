@@ -13,6 +13,20 @@ class CatalogController < ApplicationController
     ## Model that maps search index responses to the blacklight response model
     # config.response_model = Blacklight::Solr::Response
 
+
+    # Add uploads to the nav bar
+    add_nav_action :uploads, if: :user_signed_in?
+
+    #Remove Bookmarks links and forms
+    config.index.document_actions.delete(:bookmark)
+    config.show.document_actions.delete(:bookmark)
+    config.navbar.partials.delete(:bookmark)
+
+    # Remove search links from nav bar
+    config.navbar.partials.delete(:search_history)
+    config.navbar.partials.delete(:saved_searches)
+
+
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       qf: "title_t,
