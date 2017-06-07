@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   mount Blacklight::Engine => '/'
   root to: "catalog#index"
     concern :searchable, Blacklight::Routes::Searchable.new
@@ -22,9 +22,11 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
-  
+
   mount Blimp::Engine => "/"
-  get '/upload', to: 'blimp/uploads#new'
-  
+
+  authenticate :user do
+    get '/upload', to: 'blimp/uploads#new'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
