@@ -1,0 +1,25 @@
+<div id="header-navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="<%= container_classes %>">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle btn collapsed" data-toggle="collapse" data-target="#user-util-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div id="site-title">
+      <a href="http://gamma.library.temple.edu/gencon50">gencon50</a>
+    </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="user-util-collapse">
+      <%= render :partial=>'/user_util_links' %>
+    </div>
+  </div>
+</div>
+
+<div id="search-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="<%= container_classes %>">
+    <%= render_search_bar  %>
+  </div>
+</div>

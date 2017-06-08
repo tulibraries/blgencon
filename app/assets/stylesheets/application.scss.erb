@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@font-face {
+    font-family: Minecrafter;
+    src: url('./Minecrafter.Reg.ttf')  format('truetype');
+}
+@font-face {
+    font-family: Rage;
+    src: url('./Rage.ttf')  format('truetype');
+}
+@font-face {
+    font-family: futura;
+    src: url('./futura-lt-light.ttf')  format('truetype');
+}
+body {
+	background: url("<%= asset_path 'gamify.png' %>"); 
+	background-repeat: repeat;
+	/*background: transparent url(<%= asset_path 'NewCherryLogo.jpg' %>) no-repeat top left; */
+}
+.jumbotron {
+	background-color: #c1d62e;
+	border: solid #4f5812 1px;
+	p.lead a {
+		color: #000;
+		border-color: #000;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+
+	}
+}
+a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
+	color: #903;
+}
+.btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
+	color: #4f5812;
+}
+.panel-success > .panel-heading, .facet_limit-active > .panel-heading {
+	background-color: #7e8d1d;
+	border-color: #4f5812;
+	color: #fff;
+}
+#header-navbar {
+	background-color: #c1d62e;
+	border-color: #7e8d1d;
+	#site-title {
+	  color: #000;
+	  line-height: 48px;
+	  position: relative;
+	  font-size: 42px;
+	  font-family: futura, helvetica, arial, sans;
+	  padding: 42px 0 14px 0;
+	}
+	#site-title a:link, #site-title a:visited {
+	  font-family: Minecrafter;
+	  color: #000;
+	  letter-spacing: .35rem;
+	  font-size: 80px;
+	}
+	.navbar-right {
+		.navbar-nav li a {
+			color: #000000;
+		}
+		.navbar-nav li {
+			a:hover {
+				color: #000000;
+			}
+			a:focus {
+				color: #000000;
+			}
+		}
+	}
+}
+#search-navbar {
+	margin-bottom: 0;
+	background-color: #000;
+	.btn-primary {
+		color: #fff;
+    background-color: #7e8d1d;
+    border-color: #7e8d1d;
+	}
+	.btn-primary:hover {
+		color: #000;
+    background-color: #c1d62e;
+    border-color: #000;
+	}
+}
+
+#main-container {
+	background-color: #fff;
+	#content {
+		margin-top: 28px;
+	}
+	.pull-right a {
+		color: #903;
+	}
+}
