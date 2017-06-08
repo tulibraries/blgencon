@@ -1,24 +1,30 @@
-# README
+# Blacklight Instance for The Best 50 Years in Gaming site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+`git clone https://github.com/tulibraries/blgencon.git`
 
-* Ruby version
+`cd blgencon`
 
-* System dependencies
+Install the gem dependencies (generally we do this in an rvm gemset)
 
-* Configuration
+`bundle install`
 
-* Database creation
+Start solr_wrapper
 
-* Database initialization
+`solr_wrapper &`
 
-* How to run the test suite
+Create a local user
 
-* Services (job queues, cache servers, search engines, etc.)
+`bundle exec rails runner " User.new(:email => 'test@example.com', :password => 'password', :password_confirmation => 'password').save!"`
 
-* Deployment instructions
+Start the rails server
+`bundle exec rails s`
 
-* ...
+
+## Importing Data
+A sample data is in the `sample_data` directory.
+
+Go to localhost:3000/upload, Browse for the sample data file and upload it.
+
+Ingest into Solr should take a few minutes at most.
