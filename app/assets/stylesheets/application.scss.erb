@@ -25,6 +25,9 @@
     font-family: futura;
     src: url('./futura-lt-light.ttf')  format('truetype');
 }
+html, body {
+  height: 100%;
+}
 body {
 	background: url("<%= asset_path 'gamify.png' %>"); 
 	background-repeat: repeat;
@@ -41,8 +44,19 @@ body {
 
 	}
 }
-a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
+a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle, .pagination ul li a {
 	color: #903;
+}
+a:hover, a:focus, a:active {
+	color: #4f5812;
+}
+.pagination ul li a:hover, .pagination ul li a:focus, .pagination ul li a:active {
+	color: #903;
+}
+.pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+	background-color: #c1d62e;
+	border-color: #c1d62e;
+	color: #951936;
 }
 .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
 	color: #4f5812;
@@ -54,6 +68,7 @@ a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-t
 	color: #fff;
 }
 #header-navbar {
+	flex-grow: 2;
 	background-color: #c1d62e;
 	border-color: #7e8d1d;
 	#site-title {
@@ -70,6 +85,9 @@ a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-t
 	  letter-spacing: .35rem;
 	  font-size: 80px;
 	}
+	.futura {
+		font-family: futura;
+	}
 	.navbar-right {
 		.navbar-nav li a {
 			color: #000000;
@@ -83,6 +101,10 @@ a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-t
 			}
 		}
 	}
+}
+
+.navbar-static-top {
+	border-width: 0!important;
 }
 #search-navbar {
 	margin-bottom: 0;
@@ -100,11 +122,9 @@ a, .btn-default, #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-t
 }
 
 #main-container {
+	min-height: 100%;
 	background-color: #fff;
 	#content {
 		margin-top: 28px;
-	}
-	.pull-right a {
-		color: #903;
 	}
 }
