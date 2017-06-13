@@ -107,7 +107,6 @@ GEM
       thor (~> 0.19.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    google-analytics-rails (1.1.0)
     i18n (0.8.4)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -252,7 +251,6 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.5)
   foreman
-  google-analytics-rails (~> 1.1)
   harvest_csv!
   jbuilder (~> 2.5)
   jquery-rails
