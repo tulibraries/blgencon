@@ -90,28 +90,10 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'year_facet', label: 'Year'
+    config.add_facet_field 'year_facet', label: 'Year', sort: 'index'
     config.add_facet_field 'group_facet', label: 'Group'
     config.add_facet_field 'event_type_facet', label: 'Event Type'
     config.add_facet_field 'game_system_facet', label: 'Game System'
-    config.add_facet_field 'rules_edition_facet', label: 'Rules Edition'
-    config.add_facet_field 'minimum_players_facet', label: 'Minimum Players'
-    config.add_facet_field 'maximum_players_facet', label: 'Maximum Players'
-    config.add_facet_field 'age_required_facet', label: 'Age Required'
-    config.add_facet_field 'experience_required_facet', label: 'Experience Required'
-    config.add_facet_field 'materials_provided_facet', label: 'Materials Provided'
-    config.add_facet_field 'start_date_facet', label: 'Start Date'
-    config.add_facet_field 'duration_facet', label: 'Duration'
-    config.add_facet_field 'end_date_facet', label: 'End Date'
-    config.add_facet_field 'tournament_facet', label: 'Tournament'
-    config.add_facet_field 'round_number_facet', label: 'Round Number'
-    config.add_facet_field 'total_rounds_facet', label: 'Total Rounds'
-    config.add_facet_field 'minimum_play_time_facet', label: 'Minimum Play Time'
-    config.add_facet_field 'can_attendees_register_for_this_event_facet', label: 'Can Attendees Register For This Event'
-    config.add_facet_field 'event_cost_facet', label: 'Event Cost'
-    config.add_facet_field 'location_facet', label: 'Location'
-    config.add_facet_field 'special_category_facet', label: 'Special Category'
-    config.add_facet_field 'tickets_available_facet', label: 'Tickets Available'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
