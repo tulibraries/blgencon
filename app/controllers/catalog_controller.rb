@@ -90,7 +90,7 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'year_facet', label: 'Year'
+    config.add_facet_field 'year_facet', label: 'Year', sort: 'index'
     config.add_facet_field 'group_facet', label: 'Group'
     config.add_facet_field 'event_type_facet', label: 'Event Type'
     config.add_facet_field 'game_system_facet', label: 'Game System'
