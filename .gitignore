@@ -18,6 +18,8 @@
 !/log/.keep
 !/tmp/.keep
 config/secrets.yml
+config/deploy_to.yml
 
 # Ignore Byebug command history file.
 .byebug_history
+
