@@ -9,7 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/harvest_csv.git
-  revision: aae47c9269c06627ef33d490ac391112f8ec86bc
+  revision: 0a97d4dd9dd9d7eb021cfb5b9101d9c304b727e0
+  branch: gc50
   specs:
     harvest_csv (0.0.6)
       activesupport (~> 5.0)
