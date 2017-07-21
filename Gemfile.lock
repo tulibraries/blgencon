@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/harvest_csv.git
-  revision: 2d5c664cb28d7126ad7ecda1306645e74a5f5813
+  revision: aae47c9269c06627ef33d490ac391112f8ec86bc
   specs:
-    harvest_csv (0.0.5)
+    harvest_csv (0.0.6)
       activesupport (~> 5.0)
       rsolr (~> 1.0)
       ruby-progressbar (~> 1.8)
@@ -139,7 +139,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
-    minitest (5.10.2)
+    minitest (5.10.3)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nio4r (2.1.0)
@@ -271,4 +271,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.1
+   1.15.2
