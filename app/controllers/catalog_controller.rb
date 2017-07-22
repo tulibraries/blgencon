@@ -29,9 +29,25 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      qf: "title_t,
-           short_description_t,
-           long_description_t",
+      qf: %w[title_t
+           short_description_t
+           long_description_t
+           gm_names_t
+           year_t
+           also_runs_t
+           prize_t
+           group_t
+           event_type_t
+           game_system_t
+           rules_edition_t
+           age_required_t
+           experience_required_t
+           duration_t
+           website_t
+           room_name_t
+           table_number_t
+           special_category_t
+           rules_complexity_t].join(" "),
       fl: "id,
            score,
            year_display,
