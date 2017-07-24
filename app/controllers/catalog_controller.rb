@@ -201,6 +201,48 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field('game_system_t', label: 'Game System') do |field|
+      field.solr_parameters = {
+        qf: 'game_system_t',
+        pf: 'game_system_t'
+      }
+    end
+
+    config.add_search_field('event_type_t', label: 'Event Type') do |field|
+      field.solr_parameters = {
+        qf: 'event_type_t',
+        pf: 'event_type_t'
+      }
+    end
+
+    config.add_search_field('long_description_t', label: 'Long Description') do |field|
+      field.solr_parameters = {
+        qf: 'long_description_t',
+        pf: 'long_description_t'
+      }
+    end
+
+    config.add_search_field('gm_names_t', label: 'GM Names') do |field|
+      field.solr_parameters = {
+        qf: 'gm_names_t',
+        pf: 'gm_names_t'
+      }
+    end
+
+    config.add_search_field('group_t', label: 'Group') do |field|
+      field.solr_parameters = {
+        qf: 'group_t',
+        pf: 'group_t'
+      }
+    end
+
+    config.add_search_field('location_t', label: 'Location') do |field|
+      field.solr_parameters = {
+        qf: 'location_t',
+        pf: 'location_t'
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
