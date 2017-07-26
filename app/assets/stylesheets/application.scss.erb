@@ -25,13 +25,21 @@
     font-family: futura;
     src: url('./futura-lt-light.ttf')  format('truetype');
 }
-html, body {
-  height: 100%;
+html {
+  background-image: url("<%= asset_path 'gamify.png' %>"); 
+  background-repeat:  no-repeat;
+  background-position:  center center;
+  background-attachment:  fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body {
-	background: url("<%= asset_path 'gamify.png' %>"); 
-	background-repeat: repeat;
-	/*background: transparent url(<%= asset_path 'NewCherryLogo.jpg' %>) no-repeat top left; */
+	background-color: transparent;
+}
+html, body {
+  height: 100%;
 }
 .jumbotron {
 	background-color: #c1d62e;
