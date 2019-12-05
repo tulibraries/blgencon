@@ -131,9 +131,9 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    listen (3.0.8)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
+    listen (3.2.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -267,7 +267,7 @@ DEPENDENCIES
   harvest_csv!
   jbuilder (~> 2.5)
   jquery-rails
-  listen (~> 3.0.5)
+  listen (~> 3.2.0)
   pry
   pry-rails
   puma (~> 4.3)
