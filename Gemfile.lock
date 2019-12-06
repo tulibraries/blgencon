@@ -62,11 +62,11 @@ GEM
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
-    blacklight (6.21.0)
+    blacklight (6.11.2)
       bootstrap-sass (~> 3.2)
       deprecation
       globalid
-      jbuilder (~> 2.7)
+      jbuilder
       kaminari (>= 0.15)
       nokogiri (~> 1.6)
       rails (>= 4.2, < 6)
@@ -250,7 +250,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (~> 6)
+  blacklight (= 6.11.2)
   blimp!
   byebug
   carrierwave (~> 1.0)
