@@ -2,6 +2,7 @@
 year:
 - year_display
 - year_facet
+- year_sort
 - year_t
 original_order:
 - original_order_display
@@ -20,6 +21,7 @@ group:
 - group_t
 title:
 - title_display
+- title_sort
 - title_t
 short_description:
 - short_description_display
