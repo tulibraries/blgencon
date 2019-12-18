@@ -66,13 +66,13 @@ class CatalogController < ApplicationController
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SearchHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
-    #config.default_document_solr_params = {
-    #  qt: 'document',
-    #  ## These are hard-coded in the blacklight 'document' requestHandler
-    #  # fl: '*',
-    #  # rows: 1,
-    #  # q: '{!term f=id v=$id}'
-    #}
+    config.default_document_solr_params = {
+      qt: 'document',
+      ## These are hard-coded in the blacklight 'document' requestHandler
+      fl: '*',
+      rows: 1,
+      q: '{!term f=id v=$id}'
+    }
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_display'
@@ -247,9 +247,9 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, year_sort desc, title_sort asc', label: 'relevance'
-    config.add_sort_field 'year_sort desc, title_sort asc', label: 'year'
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', label: 'title'
+    #config.add_sort_field 'score desc, year_sort desc, title_sort asc', label: 'relevance'
+    #config.add_sort_field 'year_sort desc, title_sort asc', label: 'year'
+    #config.add_sort_field 'title_sort asc, pub_date_sort desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
