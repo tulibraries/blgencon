@@ -19,6 +19,7 @@
 !/tmp/.keep
 config/secrets.yml
 config/deploy_to.yml
+/csv/*
 
 # Ignore Byebug command history file.
 .byebug_history
