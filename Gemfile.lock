@@ -276,7 +276,7 @@ DEPENDENCIES
   devise-guests (~> 0.5)
   foreman
   harvest_csv!
-  jbuilder (~> 2.5)
+  jbuilder (~> 2.10)
   jquery-rails
   listen (~> 3.2.1)
   pry
