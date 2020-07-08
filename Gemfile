@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.7'
+gem 'rails', '~> 5.2.4.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.13'
 # Use Puma as the app server
@@ -48,7 +48,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'blacklight', '~> 6'
+gem 'blacklight', '~> 6.23.0'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
@@ -59,6 +59,6 @@ end
 gem 'rsolr', '~> 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.5'
-gem 'carrierwave', '~> 1.0'
+gem "carrierwave", "2.1.0"
 gem 'harvest_csv', git: 'https://github.com/tulibraries/harvest_csv.git', branch: 'gc50'
-gem 'blimp', git: 'https://github.com/tulibraries/blimp'
+gem 'blimp', github: 'tulibraries/blimp'
